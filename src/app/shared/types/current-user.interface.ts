@@ -8,5 +8,3 @@ export interface ICurrentUser {
   image: string | null;
   token: string;
 }
-
-export const HELLO_WORLD = 5;
