@@ -23,6 +23,12 @@ export class AuthService {
     return this.http.post<IAuthResponse>(url, data).pipe(map(this.getUser));
   }
 
+  public getCurrentUser(): Observable<ICurrentUser> {
+    const url = environment.apiUrl + '/user';
+
+    return this.http.get<IAuthResponse>(url).pipe(map(this.getUser));
+  }
+
   private getUser(response: IAuthResponse) {
     return response.user;
   }
